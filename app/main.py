@@ -64,6 +64,9 @@ class CarWashStation:
             car.clean_mark = self.clean_power
 
     def rate_service(self, new_rating: float) -> None:
+        if not (0.0 <= new_rating <= 5.0):
+            raise ValueError("Must be between 0.0 and 5.0")
+
         self.count_of_ratings += 1
         self.average_rating = round(
             (self.average_rating * (self.count_of_ratings - 1)
