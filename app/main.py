@@ -8,10 +8,10 @@ class Car:
             clean_mark: int,
             brand: str
     ) -> None:
-        if comfort_class not in range(1, 11):
+        if not (1 <= comfort_class <= 10):
             raise ValueError("Must be between 1 and 10")
 
-        if clean_mark not in range(0, 11):
+        if not (0 <= clean_mark <= 10):
             raise ValueError("Must be between 0 and 10")
 
         self.comfort_class = comfort_class
@@ -30,7 +30,7 @@ class CarWashStation:
         if distance_from_city_center <= 0:
             raise ValueError("Must be greater than 0")
 
-        if clean_power not in range(0, 11):
+        if not (0 <= clean_power <= 10):
             raise ValueError("Must be between 0 and 10")
 
         if not (0.0 <= average_rating <= 5.0):
